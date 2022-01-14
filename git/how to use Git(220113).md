@@ -1,5 +1,11 @@
 ## Git 사용법 공부
 
+- git config --global user.name 내용 : 내용 으로 user.name 설정
+
+  git config --global user.email 내용 : 내용 으로 user.email 설정
+
+  한 번 설정하면 쓸 일 없음, 컴퓨터 새로 사면 설정해줘야!
+
 - working directory: 실제 작업 부분 (ex 폴더 내의 파일들)
 
   git init 으로 설정, 그 directory 안의 파일들을 git으로 관리함
