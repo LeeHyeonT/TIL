@@ -1,14 +1,20 @@
-# git 활용 2일차
+[toc]
 
-- ignore 기능
+# Git 활용 2일차
 
-  git init 하고 바로 touch .gitignore 만들어줘야 함, 이후 .gitignore 열어서 ignore 할 파일 이름 작성 후 저장(확장자까지!!)
+## 1. ignore 기능
+
+- git init 하고 바로 touch .gitignore 만들어줘야 함, 이후 .gitignore 열어서 ignore 할 파일 이름 작성 후 저장(확장자까지!!)
 
   이미 올라가 있는 자료는 ignore 불가
 
-  https://gitignore.io 들어가서 해당되는 것 체크하고 나오는 것 다 복사해서 .gitignore에 붙여넣기
+- https://gitignore.io 들어가서 해당되는 것 체크하고 나오는 것 다 복사해서 .gitignore에 붙여넣기
 
   (python,windows,visualstudiocode,venv, pycharm)
+
+  
+
+## 2. branch 구조 확인하기
 
 - git log --oneline --all : 다른 branch 작업 commit 도 확인 가능! but branch 순서까지는 알 수 없음
 
@@ -16,11 +22,17 @@
 
   merge 후에는 git log --oneline --graph 만 해도 전체  branch구조 보임
 
-- 시간여행
+  
 
-  git reset --hard <commit명 4글자만> : 입력한 commit 까지의 상황으로 돌아감
+## 3. 과거로 돌아가기
+
+- git reset --hard <commit명 4글자만> : 입력한 commit 까지의 상황으로 돌아감
 
   git reflog : 전체 log 보여줌, reset 해도 전의 것들도 다 보임
+
+  
+
+## 4. branch 추가
 
 - git switch -c 이름 : 이름 의 branch 를 생성 후 그곳으로 이동함
 
@@ -28,7 +40,7 @@
 
 ---
 
-# chatbot
+# Chatbot
 
 - Module: 파일 단위의 파이썬 코드 (a.py 같은 것)
 

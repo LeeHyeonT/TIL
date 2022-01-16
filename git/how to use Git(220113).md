@@ -1,10 +1,22 @@
-## Git 사용법 공부
 
-- git config --global user.name 내용 : 내용 으로 user.name 설정
 
-  git config --global user.email 내용 : 내용 으로 user.email 설정
+[toc]
+
+
+
+# Git 사용법 공부
+
+## 1. 초기 설정
+
+- git config --global user.name 내용 : 내용 으로 user.name 설정, github 사용자이름 입력
+
+  git config --global user.email 내용 : 내용 으로 user.email 설정, github 이메일 입력
 
   한 번 설정하면 쓸 일 없음, 컴퓨터 새로 사면 설정해줘야!
+
+  
+
+## 2. Git의 3가지 공간
 
 - working directory: 실제 작업 부분 (ex 폴더 내의 파일들)
 
@@ -42,7 +54,17 @@
 
   git log --oneline : commit 한 줄로 확인
 
+
+
+## 3. Git과 github 연결하기
+
+### 1) github에 파일 올리기
+
 - git remote add origin <url> : origin 이라는 이름을 작성한 url와 연결시킴
+
+  주로 github내 repository 주소와 연결
+
+  (이름을 꼭 origin으로 할 필요는 없으나 관례로 인해 대부분 origin이라 명명함)
 
   git remote rm origin : 연결되어있는 origin 주소 삭제
 
@@ -52,17 +74,17 @@
 
   로컬 저장소에서 원격 저장소로 내용 보내주는 개념
 
-  git push -u origin master : origin에서 master 으로 이동하는 것을 자동으로 저장, 이후 origin master 안 입력해도 가능
+  git push -u origin master : origin에서 master 으로 이동하는 것을 자동으로 저장, 이후 git push 만 입력해도 내용 보낼 수 있음
 
-- github에 올린 파일 복사해서 내려받는 방법
+### 2) github에 올린 파일 복사해서 내려받는 방법
 
-  - github 내 repository 선택 후 code 버튼 옆의 화살표 눌러 나오는 주소 복사
+- github 내 repository 선택 후 code 버튼 옆의 화살표 눌러 나오는 주소 복사
 
-    이후 git clone <주소> 치면 현재 디렉토리에 다 내려받아짐, repository 포함
+  이후 git clone <주소> 치면 현재 디렉토리에 다 내려받아짐, repository 포함
 
-  - git clone <주소> . : 현재 폴더 자체에 .git 파일 생성 및 파일 내려받아짐
+  git clone <주소> . : 현재 폴더 자체에 .git 파일 생성 및 파일 내려받아짐
 
-  - git clone <주소> 폴더이름 : 폴더이름을 가진 폴더를 생성하여 그 안에 파일 내려받아짐
+  git clone <주소> 폴더이름 : 폴더이름을 가진 폴더를 생성하여 그 안에 파일 내려받아짐
 
 - git pull : `최초 clone된 것`에서 push 한 것을 내려받을 수 있음: 깃허브의 commit 으로 최신화
 
@@ -72,22 +94,42 @@
 
 ---
 
+### 3) complete 상황 속 pull - push
+
 - complete 상황 속 서로 동기화시키기 -> 초기 파일이 존재해야 가능!
 
   - 같은 파일 내 A'B vs AB' : A'B' 으로 자동으로 완성됨!
 
   (ex txt 파일 가)
 
-  - branch : 가지 : 분할작업 할 때 설정하는 것
+#### branch 개념 
 
-    새 폴더에서 branch 설정할 때 commit 된 파일 하나 이상 존재해야 함!
+- branch : 가지 : 분할작업 할 때 설정하는 것
+- 새 폴더에서 branch 설정할 때 commit 된 파일 하나 이상 존재해야 함!
 
-    git branch : 가지 확인
+- git branch : 가지 확인
 
-    git branch -d 가지이름 : 가지이름의 가지 삭제
+​		git branch -d 가지이름 : 가지이름의 가지 삭제
 
-    git branch 이름 : 이름 의 가지 생성
+​		git branch 이름 : 이름 의 가지 생성
 
-    git switch 가지이름 : 그 가지이름으로 이동, GUI에서 그 가지 내의 파일만 보임
+​		git switch 가지이름 : 그 가지이름으로 이동, GUI에서 그 가지 내의 파일만 보임
 
-    git merge 가지이름 : *현재 가지 기준*으로 가지이름 친 가지 파일 통합시킴, 가지는 남아있음
+​		git merge 가지이름 : *현재 가지 기준*으로 가지이름 친 가지 파일 통합시킴, 가지는 남아있음
+
+
+
+#### branch를 이용한 complete한 상황 만들기
+
+\- master branch에서 a.txt 파일에 "안녕하세요" 내용 생성 후 add/commit 진행
+
+\- new 라는 이름을 가진 branch 생성
+
+\- master branch, new branch 에서 각각 a.txt 파일 내용 다르게 수정 후 add/commit 진행
+
+\- master branch 에서 git merge 진행 : complete 상황 걸림
+
+\- 해결법 
+
+- 쉬움) 	complete 상황 걸린 파일을 vs코드로 열어 그 안에서 선택
+- 귀찮음) complete 상황 걸린 파일을 직접 열어 수정
