@@ -44,7 +44,22 @@ else:
 
 ### 중첩 조건문 활용 코드
 
-```
+```python
+dust = int(input('오늘의 미세먼지량 : ')) 
+
+if dust > 150:
+    print('매우 나쁨')
+    if dust > 300:
+        print('실외 활동 자제')
+elif dust > 80:
+    print('나쁨')
+elif dust > 30:
+    print('보통')
+else:
+    if dust >=0:
+        print('좋음')
+    else:
+        print('잘못된 값 입력')
 ```
 
 ### 조건 표현식
@@ -55,7 +70,7 @@ value = num if num >= 0 else -num
 
 절댓값 나타내는 코드!
 
-**"참일때 값 if 조건 else 거짓일 때 값"**
+형식: **참일때 값 if 조건 else 거짓일 때 값**
 
 ---
 
