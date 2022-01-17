@@ -156,12 +156,28 @@ for idx, value in enumerate(chars):
 
 #### List comprehension
 
-```
+```python
+# 1~3의 세제곱 리스트 만들기
+cubic_list = []
+for number in range(1,4):
+    cubic_list.append(number ** 3)
+cubic_list
+
+# 이렇게 해도 가능
+[number**3 for number in range(1,4)]
 ```
 
 #### Dictionary comprehension
 
-```
+```python
+# 1~3의 세제곱 dictionary 만들기
+cubic_dict = {}
+for numner in range(1,4):
+    cubic_dict[number] = number**3
+cubic_dict
+
+# 이렇게 해도 가능
+{number:number**3 for number in range(1,4)}
 ```
 
 
