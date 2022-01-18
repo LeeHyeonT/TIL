@@ -25,9 +25,9 @@ else:
 
 - % 2 하면 나오는 값은 0 아니면 1: 0은 false, 1은 true
 
-  list에서 [ ] 내부 비어있으면 false, 차 있으면 true
+  list에서 [ ] 내부 비어있으면 false, 차있으면 true
 
-### elif 활용 코드
+### elif 활용 코드(복수 조건문)
 
 ```python
 dust = int(input('오늘의 미세먼지량 : ')) 
@@ -70,7 +70,7 @@ value = num if num >= 0 else -num
 
 절댓값 나타내는 코드!
 
-형식: **참일때 값 if 조건 else 거짓일 때 값**
+형식: **참일 때 값 if 조건 else 거짓일 때 값**
 
 ---
 
@@ -105,7 +105,7 @@ print(total)
 
 ### For문
 
-**"for 객체 in 시퀀스"** 의 형식으로 진행
+**"for 변수명 in 시퀀스(iterable)"** 의 형식으로 진행
 
 **결과 담을 변수의 초기화 생각할 것!!**
 
@@ -152,7 +152,7 @@ for value in grades.values():
 #4. items 이용
 
 for key, value in grades.item():
-    # key, value = ()
+    # key, value = () 튜플 형태들의 list로 나옴
     print(key, value)
     
 print(grades.items())
@@ -178,7 +178,7 @@ for number in range(1,4):
     cubic_list.append(number ** 3)
 cubic_list
 
-# 이렇게 해도 가능
+# 이렇게 해도 가능, 익숙해지면 훨씬 편함
 [number**3 for number in range(1,4)]
 ```
 
@@ -191,7 +191,7 @@ for numner in range(1,4):
     cubic_dict[number] = number**3
 cubic_dict
 
-# 이렇게 해도 가능
+# 이렇게 해도 가능, 익숙해지면 훨씬 편함
 {number:number**3 for number in range(1,4)}
 ```
 
@@ -210,7 +210,7 @@ for i in range(1,31):
         numbers.append(i)
 print(numbers)
 
-# 한 줄 방법
+# 한 줄 방법, 익숙해지면 훨씬 편함
 numbers_2 = [i for i in range(1,31) if i % 2 == 1]
 print(numbers_2)
 ```

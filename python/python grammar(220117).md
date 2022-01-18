@@ -162,11 +162,19 @@ set() 이나 중괄호 이용: {  }
 
 키-값(key-value) 쌍으로 이루어진 객체 잠조
 
-key: 불변 자료형(immutable)
+key: 불변 자료형(immutable) : str, int, tuple형만 가능
 
 value: 자유로운 형태
 
-dict() 나 중관호 이용: {  }
+dict() 나 중괄호 이용: {  }
+
+빈 중괄호는 dict type을 가짐
+
+dic = {1 : 2, 2 : 3}  에서
+
+`print(dic[3])`얘는 오류를 뱉음
+
+`print(dic,get(3)) `얘는 None을 뱉음 
 
 
 
@@ -202,6 +210,8 @@ dictionary를 다른 형태로 변환시키면 key만 나옴
 
 %(modulo) : 나머지 --> 홀짝 구분할 때 많이 쓰임
 
+divmod(나눌값, 나누는숫자) : (몫, 나머지)의 tuple 형태로 나옴
+
 ### 비교 연산자
 
 == : 같음
@@ -214,17 +224,23 @@ True/False 값 반환
 
 A and B : A,B 둘 다 True어야 True, 아니면 False
 
+A가 False 면 뒤에꺼 확인 x,  A가 True면 뒤에꺼 확인 o
+
 A or B : A,B 둘 다 False 어야 False, 아니면 True
+
+A가 True면 뒤에꺼 확인 x,  A가 False면 뒤에꺼 확인 o
 
 True/False 값 반환
 
 ### 복합 연산자
 
-+= : 변수에 1 더함
++= n: 변수에 n 더함
 
 ### 식별 연산자
 
 is : none 파악할 때 씀
+
+True/False 반환
 
 ### 멥버십 연산자
 
