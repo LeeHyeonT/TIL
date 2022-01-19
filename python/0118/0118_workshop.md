@@ -25,6 +25,8 @@
            print ('중간값 : %d' %numbers[int(len(numbers)/2)])
    else:
            print ('중간값 : %d %d' %(numbers[int(len(numbers)/2)-1],numbers[int(len(numbers)/2)]))
+   
+   # sorted 함수 이용하면 쉽게 가능하다
    ```
 
 
