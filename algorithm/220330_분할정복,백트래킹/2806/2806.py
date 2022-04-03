@@ -1,6 +1,7 @@
 import sys
 sys.stdin = open('input.txt', 'r')
 
+# 일단 이런 방식으론 접근 실패
 def queen(i, j, array):
     for k in range(4):
         ii = i
@@ -17,12 +18,21 @@ def queen(i, j, array):
     if j >= 1:
         array[i][j-1] = -1
 
-    
-    if sum(array[i]) >= -N +2:
-        for m in range(N):
-            if arr[i][m] == 0:
-                array_copy = array[:]
-                queen(i,m,array_copy)
+    # pruning 및 종료조건
+    for prun in range(N):
+        if arr[prun] not in 0:
+            return
+
+    while i+1 < N:
+        if sum(array[i+1]) >= -N +2:
+            for m in range(N):
+                if arr[i+1][m] == 0:
+                    array_copy = array[:]
+                    queen(i,m,array_copy)
+        elif sum(array[i+1]) == -N +1:
+            for n in range(N):
+                if arr[i+1][n] == 0:
+                    queen(i+1, n, )
 
 
 T = int(input())
