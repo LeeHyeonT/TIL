@@ -2,6 +2,22 @@
 
 [1. Form](#1-Form)
 
+​	[- Form rendering options](#-Form-rendering-options-(Form이-어떻게-보여질-것인가))
+
+​	[- Django HTML input 요소 표현](-Django의-HTML-input-요소-표현-2가지)
+
+[2. ModelForm](#2-ModelForm)
+
+​	[widget 활용](#*-widget-활용하기-*)
+
+[3. Rendering fields manually](#3-rendering-fields-manually)
+
+​	[1) Rendering fields manually](#1-rendering-fields-manually)
+
+​	[2) for tag](#2-for-tag)
+
+[** Bootstrap 적용 **](#**-bootstrap-적용-**)
+
 # 1. Form
 
 Django Form 을 이용하여 받아오는 데이터의 유효성 검증을 쉽게 할 수 있음:
