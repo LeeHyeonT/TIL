@@ -2,9 +2,9 @@
 
 [1. Form](#1-Form)
 
-​	[- Form rendering options](#-Form-rendering-options-(Form이-어떻게-보여질-것인가))
+​	[- Form rendering options](#Form-rendering-options-(Form이-어떻게-보여질-것인가))
 
-​	[- Django HTML input 요소 표현](-Django의-HTML-input-요소-표현-2가지)
+​	[- Django HTML input 요소 표현](Django의-HTML-input-요소-표현-2가지)
 
 [2. ModelForm](#2-ModelForm)
 
@@ -14,9 +14,9 @@
 
 ​	[1) Rendering fields manually](#1-rendering-fields-manually)
 
-​	[2) for tag](#2-for-tag)
+​	[2) for tag](#2-Looping-over-the-form's-fields-(using-{%-for-%}))
 
-[** Bootstrap 적용 **](#**-bootstrap-적용-**)
+[** Bootstrap 적용 **](#**-Bootstrap-적용시키기-**)
 
 # 1. Form
 
