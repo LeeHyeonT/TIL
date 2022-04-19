@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<h1>{{ person.username }}'s 프로필</h1>
+
+{% with followers=person.followers.all  followings=person.followings.all %}
+  <div>
+    팔로워 : {{ followers|length }} 
+    <br>
+    팔로우 : {{ followings|length }}
+  </div>
+  <div>
+    {% if user != person %}
+      <form action="{% url 'accounts:follow' person.pk %}" method="POST">
+        {% csrf_token %}
+        {% if user in followers %}
+        <i class="fa-solid fa-person-circle-minus" style="color:red"></i>
+          <input type="submit" value="UnFollow">
+        {% else %}
+        <i class="fa-solid fa-person-circle-plus"></i>
+          <input type="submit" value="Follow">
+        {% endif %}
+      </form>
+    {% endif %}
+  </div>
+{% endwith %}
+<hr>
+<hr>
+<h2>{{ person.username }}'s 게시글 목록</h2>
+{% for article in person.article_set.all %}
+  <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>
+{% endfor %}
+<hr>
+<hr>
+<h2>{{ person.username }}'s 댓글 목록</h2>
+{% for comment in person.comment_set.all %}
+  <p>{{ comment.content }}</p>
+{% endfor %}
+<hr>
+<hr>
+<h2>{{ person.username}}'s 관심있는 게시글</h2>
+{% for article in person.like_articles.all %}
+  <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a>
+  <br>
+  {% endfor %}
+<hr>
+<button class="button" onclick="location.href='{% url 'articles:index' %}'">뒤로 가기</button>
+{% endblock content %}

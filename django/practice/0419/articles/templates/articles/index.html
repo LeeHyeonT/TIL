@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block content %}
+  <h1>Welcome TO the Page!</h1>
+  {% if request.user.is_authenticated %}
+    <button class="button" onclick="location.href='{% url 'articles:create' %}'">글쓰기</button>
+  {% else %}
+    <button class="button" onclick="location.href='{% url 'accounts:login' %}'">[글을 쓰려면 로그인 해야 합니다]</button>
+  {% endif %}
+  <hr>
+
+  {% for article in articles %}
+  <p>작성자: {{ article.user }}</p>
+  <button class="button" onclick="location.href='{% url 'accounts:profile' article.user.username %}'">작성자 프로필 페이지</button>
+  <p>글 번호: {{ article.pk }}</p>
+  <p>글 제목: <a href="{% url 'articles:detail' article.pk %}">{{ article.title }}</a></p>
+  <p>글 내용: {{ article.content }}</p>
+  
+  <div>
+    <form action="{% url 'articles:likes' article.pk  %}" method="POST">
+      {% csrf_token %}
+      {% if user in article.like_users.all %}
+        <input type="submit" value="좋아요 취소">
+      {% else %}
+        <input type="submit" value="좋아요">
+      {% endif %}
+    </form>
+  </div>
+  <hr>
+  {% endfor %}
+{% endblock content %}

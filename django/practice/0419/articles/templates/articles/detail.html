@@ -1,0 +1,51 @@
+{% extends 'base.html' %}
+
+
+{% block content %}
+  <h1>상세 페이지</h1>
+  <h3>{{ article.pk }} 번째 글입니다</h3>
+  <hr>
+  <p>제목 : {{ article.title }}</p>
+  <p>내용 : {{ article.content }}</p>
+  <br>
+  <p>작성 시각 : {{ article.created_at }}</p>
+  <p>수정 시각 : {{ article.updated_at }}</p>
+  <hr>
+  {% if request.user == article.user %}
+    <button class="button" onclick="location.href='{% url 'articles:update' article.pk %}'">수정하기</button>
+    <form action="{% url 'articles:delete' article.pk %}" method="POST">
+      {% csrf_token %}
+      <input type="submit" value="삭제하기">
+    </form>
+  {% endif %}
+  <hr>
+  <button class="button" onclick="location.href='{% url 'articles:index' %}'">뒤로가기</button>
+  <hr>
+  <hr>
+  <h3>댓글 목록</h3>
+  <ul>
+    {% for comment in comments %}
+      <li>
+        {{ comment.user }} 님의 댓글: {{ comment.content }}
+        {% if request.user == comment.user %}
+          <form action="{% url 'articles:comment_delete' article.pk comment.pk %}" method="POST">
+            {% csrf_token %}
+            <input type="submit" value="댓글 삭제">
+          </form>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+  <hr>
+  <hr>
+  <h3>새 댓글 작성</h3>
+  {% if request.user.is_authenticated %}
+    <form action="{% url 'articles:comment_create' article.pk %}" method="POST">
+      {% csrf_token %}
+      {{ comment_form }}
+      <input type="submit" value="댓글 작성">
+    </form>
+  {% else %}
+  <button class="button" onclick="location.href='{% url 'accounts:login' %}'">댓글을 작성하려면 로그인하세요</button>
+  {% endif %}
+{% endblock content %}
