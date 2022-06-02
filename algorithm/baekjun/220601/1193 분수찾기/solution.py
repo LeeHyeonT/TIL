@@ -9,9 +9,6 @@ while n > line:
     line += 1
 
 # 홀수라인 vs 짝수라인
-print(line)
-print(n)
-
 if line % 2  == 1:
     a = line - n + 1
     b = n
