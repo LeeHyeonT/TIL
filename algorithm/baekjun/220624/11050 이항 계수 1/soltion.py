@@ -1,24 +1,26 @@
 import sys
 sys.stdin = open('input.txt', encoding='UTF-8')
 
-from itertools import combinations
-N, K = map(int, input().split())
-lst_1 = []
+# from itertools import combinations
+# N, K = map(int, input().split())
+# lst_1 = []
 
-for i in range(N):
-    lst_1.append(i)
-b = list(combinations(lst_1, K))
-print(len(b))
+# for i in range(N):
+#     lst_1.append(i)
+# b = list(combinations(lst_1, K))
+# print(len(b))
+
 # 오랜만에 combinations 라이브러리 사용
 # 이 방법은 좋긴 하지만...아래 방법이 시간이 초과된 이유를 살펴보자
 
-tmp1 = N - K
+N, K = map(int, input().split())
+tmp1 = K
 
 num1 = 1
 num2 = 1
 
 while True:
-    if tmp1 == 1:
+    if tmp1 == 0:
         break
     num1 = num1 * N
     tmp1 -= 1
