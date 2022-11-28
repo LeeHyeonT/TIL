@@ -1,14 +1,14 @@
 # openVidu
 
-[1. openVidu란?]()
+[1. openVidu란?](#1-openvidu란)
 
-​	[1) 특징]()
+​	[1) 특징](#1-특징)
 
-[2. openVidu in React (No BE)]()
+[2. openVidu in React (No BE)](#2-openvidu-in-react-no-be)
 
-​	[1) 소개]()
+​	[1) 소개](#1-소개)
 
-​	[2) 샘플 코드 분석(only 화면)]()
+​	[2) 샘플 코드 분석(only 화면)](#2-샘플-코드-분석-only-화면)
 
 ---
 
@@ -47,7 +47,7 @@
 
 ### 1) 소개
 
-![image-20220721142634427](../../../../../AppData/Roaming/Typora/typora-user-images/image-20220721142634427.png)
+![](assets/openvidu%20in%20react.jpg)
 
 총 세 가지 부분에서 작업이 이루어짐
 
