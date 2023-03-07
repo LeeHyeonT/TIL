@@ -36,3 +36,8 @@ for i in range(n-1):
 
 
 print(dp[n-1])    
+
+'''
+그 때 그 때마다 돈이 가장 적게 드는 위치를 체크해가며 풀면 되는 문제.
+greedy 알고리즘 문제이지만 dynamic programming 형태로 문제를 풀면 시간복잡도가 향상된 모습을 볼 수 있다
+'''
